@@ -7,8 +7,16 @@ public class Calculator {
 		
 		int num1 = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number: "));
 		int num2 = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number: "));
-
-		String operator = JOptionPane.showInputDialog("Enter the operator (+, -, * or /): ");
+		String operator;
+		
+		while (true) {
+			operator = JOptionPane.showInputDialog("Enter the operator (+, -, * or /): ");	
+			
+			if (isValidOperator(operator))
+				break;
+			else
+				JOptionPane.showMessageDialog(null, "INVALID! TRY AGAIN!");
+		}
 		
 		int result = 0;
 		
@@ -32,5 +40,9 @@ public class Calculator {
 				JOptionPane.showMessageDialog(null, "INVALID OPERATOR!");
 				}
 			JOptionPane.showMessageDialog(null, "The result is "+ result);
+	}
+	
+	private static boolean isValidOperator(String operator) {
+		return operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/"); 
 	}
 }
