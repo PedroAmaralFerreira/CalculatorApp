@@ -29,7 +29,7 @@ public class Calculator {
 					JOptionPane.showMessageDialog(null, "You can't divide by zero.");
 				break;
 			default:
-				JOptionPane.showMessageDialog(null, "INVALID OPERATOR! Try again!");
+				JOptionPane.showMessageDialog(null, "INVALID OPERATOR!");
 				}
 			JOptionPane.showMessageDialog(null, "The result is "+ result);
 	}
